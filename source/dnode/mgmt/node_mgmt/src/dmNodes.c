@@ -28,13 +28,13 @@ int32_t dmOpenNode(SMgmtWrapper *pWrapper) {
   SMgmtOutputOpt output = {0};
   SMgmtInputOpt  input = dmBuildMgmtInputOpt(pWrapper);
 
-  dInfo("node:%s, start to open", pWrapper->name);
+  dInfo("node instance name:%s, start to open", pWrapper->name);
   tmsgSetDefault(&input.msgCb);
   if ((*pWrapper->func.openFp)(&input, &output) != 0) {
     dError("node:%s, failed to open since %s", pWrapper->name, terrstr());
     return -1;
   }
-  dInfo("node:%s, has been opened", pWrapper->name);
+  dInfo("node instance name:%s, has been opened", pWrapper->name);
   pWrapper->deployed = true;
 
   if (output.pMgmt != NULL) {
@@ -130,6 +130,7 @@ static void dmCloseNodes(SDnode *pDnode) {
 }
 
 int32_t dmRunDnode(SDnode *pDnode) {
+  dInfo("dmNodes:dmRunDnode");
   int32_t count = 0;
   if (dmOpenNodes(pDnode) != 0) {
     dError("failed to open nodes since %s", terrstr());

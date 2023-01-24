@@ -142,6 +142,7 @@ void dmStop() {
 }
 
 int32_t dmRun() {
+  dInfo("dmEvn:dmRun");
   SDnode *pDnode = dmInstance();
   return dmRunDnode(pDnode);
 }

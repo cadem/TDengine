@@ -272,14 +272,17 @@ int mainWindows(int argc, char **argv) {
     return 0;
   }
 
+  printf("Init log ------------\n");
   if (dmInitLog() != 0) {
     printf("failed to start since init log error\n");
     taosCleanupArgs();
     return -1;
   }
 
+  dInfo("Print Args ------------");
   dmPrintArgs(argc, argv);
 
+  dInfo("Init config ------------");
   if (taosInitCfg(configDir, global.envCmd, global.envFile, global.apolloUrl, global.pArgs, 0) != 0) {
     dError("failed to start since read config error");
     taosCloseLog();
@@ -287,6 +290,7 @@ int mainWindows(int argc, char **argv) {
     return -1;
   }
 
+  dInfo("Init conv ------------");
   if (taosConvInit() != 0) {
     dError("failed to init conv");
     taosCloseLog();
@@ -294,6 +298,7 @@ int mainWindows(int argc, char **argv) {
     return -1;
   }
 
+  dInfo("Dump config ------------");
   if (global.dumpConfig) {
     dmDumpCfg();
     taosCleanupCfg();
@@ -303,6 +308,7 @@ int mainWindows(int argc, char **argv) {
     return 0;
   }
 
+  dInfo("Dump sdb ------------");
   if (global.dumpSdb) {
     mndDumpSdb();
     taosCleanupCfg();
@@ -315,6 +321,7 @@ int mainWindows(int argc, char **argv) {
   osSetProcPath(argc, (char **)argv);
   taosCleanupArgs();
 
+  dInfo("Init ------------");
   if (dmInit() != 0) {
     dError("failed to init dnode since %s", terrstr());
 
@@ -324,10 +331,10 @@ int mainWindows(int argc, char **argv) {
     return -1;
   }
 
-  dInfo("start to init service");
+  dInfo("start to init service ------------");
   dmSetSignalHandle();
   int32_t code = dmRun();
-  dInfo("shutting down the service");
+  dInfo("shutting down the service ------------");
 
   dmCleanup();
   return code;
