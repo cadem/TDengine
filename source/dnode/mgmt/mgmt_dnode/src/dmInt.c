@@ -17,6 +17,7 @@
 #include "dmInt.h"
 
 static int32_t dmStartMgmt(SDnodeMgmt *pMgmt) {
+  dInfo("mgmt_dnode:dmInt.c:dmStartMgmt(){}");
   if (dmStartStatusThread(pMgmt) != 0) {
     return -1;
   }
@@ -37,6 +38,7 @@ static void dmStopMgmt(SDnodeMgmt *pMgmt) {
 }
 
 static int32_t dmOpenMgmt(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
+  dInfo("mgmt_mnode:dmInt:dmOpenMgmt()");
   SDnodeMgmt *pMgmt = taosMemoryCalloc(1, sizeof(SDnodeMgmt));
   if (pMgmt == NULL) {
     terrno = TSDB_CODE_OUT_OF_MEMORY;

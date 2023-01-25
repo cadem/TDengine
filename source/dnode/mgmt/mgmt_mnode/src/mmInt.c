@@ -68,6 +68,7 @@ static void mmClose(SMnodeMgmt *pMgmt) {
 }
 
 static int32_t mmOpen(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
+  dInfo("mgmt_mnode:mmInt:mmOpen()");
   if (walInit() != 0) {
     dError("failed to init wal since %s", terrstr());
     return -1;
@@ -138,7 +139,7 @@ static int32_t mmOpen(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
 }
 
 static int32_t mmStart(SMnodeMgmt *pMgmt) {
-  dDebug("mnode-mgmt start to run");
+  dInfo("mgmt_mnode:mmInt.c:mmStart(){}");
   return mndStart(pMgmt->pMnode);
 }
 

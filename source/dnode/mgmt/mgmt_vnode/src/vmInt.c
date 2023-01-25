@@ -395,6 +395,7 @@ static void vmCleanupTimer(SVnodeMgmt *pMgmt) {
 }
 
 static int32_t vmInit(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
+  dInfo("mgmt_vnode:vmInt:vmInit()");
   int32_t code = -1;
 
   SVnodeMgmt *pMgmt = taosMemoryCalloc(1, sizeof(SVnodeMgmt));
@@ -512,6 +513,7 @@ static void *vmRestoreVnodeInThread(void *param) {
 }
 
 static int32_t vmStartVnodes(SVnodeMgmt *pMgmt) {
+  dInfo("mgmt_vnode:vmInt.c:vmStartVnodes(){}");
   int32_t     numOfVnodes = 0;
   SVnodeObj **ppVnodes = vmGetVnodeListFromHash(pMgmt, &numOfVnodes);
 
