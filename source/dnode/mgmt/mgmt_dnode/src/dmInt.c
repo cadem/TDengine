@@ -56,6 +56,7 @@ static int32_t dmOpenMgmt(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
   pMgmt->getMnodeLoadsFp = pInput->getMnodeLoadsFp;
   pMgmt->getQnodeLoadsFp = pInput->getQnodeLoadsFp;
 
+  dInfo("dmStartWork(); -- begin dnode management worker thread");
   if (dmStartWorker(pMgmt) != 0) {
     return -1;
   }

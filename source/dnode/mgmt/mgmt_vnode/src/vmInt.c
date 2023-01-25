@@ -446,6 +446,7 @@ static int32_t vmInit(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
   }
   tmsgReportStartup("vnode-commit", "initialized");
 
+  dInfo("vnode management start worker thread");
   if (vmStartWorker(pMgmt) != 0) {
     dError("failed to init workers since %s", terrstr());
     goto _OVER;
