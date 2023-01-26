@@ -41,7 +41,6 @@ static void dmStopMgmt(SDnodeMgmt *pMgmt) {
 }
 
 static int32_t dmOpenMgmt(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
-  dInfo("mgmt_mnode:dmInt:dmOpenMgmt()");
   SDnodeMgmt *pMgmt = taosMemoryCalloc(1, sizeof(SDnodeMgmt));
   if (pMgmt == NULL) {
     terrno = TSDB_CODE_OUT_OF_MEMORY;
@@ -59,11 +58,13 @@ static int32_t dmOpenMgmt(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
   pMgmt->getMnodeLoadsFp = pInput->getMnodeLoadsFp;
   pMgmt->getQnodeLoadsFp = pInput->getQnodeLoadsFp;
 
-  dInfo("dmStartWork(); -- begin dnode management worker thread");
+  dInfo("open dnode(1/2):begin dnode management worker thread");
+
   if (dmStartWorker(pMgmt) != 0) {
     return -1;
   }
 
+  dInfo("open dnode(2/2):start Udfd");
   if (udfStartUdfd(pMgmt->pData->dnodeId) != 0) {
     dError("failed to start udfd");
   }

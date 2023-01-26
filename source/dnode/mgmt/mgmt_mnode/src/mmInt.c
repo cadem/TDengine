@@ -68,12 +68,13 @@ static void mmClose(SMnodeMgmt *pMgmt) {
 }
 
 static int32_t mmOpen(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
-  dInfo("mgmt_mnode:mmInt:mmOpen()");
+  dInfo("open mnode(1/5):walInit");
   if (walInit() != 0) {
     dError("failed to init wal since %s", terrstr());
     return -1;
   }
 
+  dInfo("open mnode(2/5):syncInit");
   if (syncInit() != 0) {
     dError("failed to init sync since %s", terrstr());
     return -1;
@@ -100,6 +101,7 @@ static int32_t mmOpen(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
     return -1;
   }
 
+  dInfo("open mnode(3/5):deploy");
   if (!option.deploy) {
     dInfo("mnode start to deploy");
     pMgmt->pData->dnodeId = 1;
@@ -109,6 +111,7 @@ static int32_t mmOpen(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
     mmBuildOptionForOpen(pMgmt, &option);
   }
 
+  dInfo("open mnode(4/5):open mnode");
   pMgmt->pMnode = mndOpen(pMgmt->path, &option);
   if (pMgmt->pMnode == NULL) {
     dError("failed to open mnode since %s", terrstr());
@@ -117,7 +120,7 @@ static int32_t mmOpen(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
   }
   tmsgReportStartup("mnode-impl", "initialized");
 
-  dInfo("mmStartWorker(); -- start mnode management worker thread");
+  dInfo("open mnode(5/5):start mnode management worker thread");
   if (mmStartWorker(pMgmt) != 0) {
     dError("failed to start mnode worker since %s", terrstr());
     mmClose(pMgmt);

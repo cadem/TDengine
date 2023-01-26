@@ -395,7 +395,6 @@ static void vmCleanupTimer(SVnodeMgmt *pMgmt) {
 }
 
 static int32_t vmInit(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
-  dInfo("mgmt_vnode:vmInt:vmInit()");
   int32_t code = -1;
 
   SVnodeMgmt *pMgmt = taosMemoryCalloc(1, sizeof(SVnodeMgmt));
@@ -421,6 +420,7 @@ static int32_t vmInit(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
     numOfDisks = 1;
   }
 
+  dInfo("Init vnode management(1/6):vnode-tfs");
   pMgmt->pTfs = tfsOpen(pDisks, numOfDisks);
   if (pMgmt->pTfs == NULL) {
     dError("failed to init tfs since %s", terrstr());
@@ -428,24 +428,28 @@ static int32_t vmInit(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
   }
   tmsgReportStartup("vnode-tfs", "initialized");
 
+  dInfo("Init vnode management(2/6):vnode-wal");
   if (walInit() != 0) {
     dError("failed to init wal since %s", terrstr());
     goto _OVER;
   }
   tmsgReportStartup("vnode-wal", "initialized");
 
+  dInfo("Init vnode management(3/6):vnode-sync");
   if (syncInit() != 0) {
     dError("failed to open sync since %s", terrstr());
     goto _OVER;
   }
   tmsgReportStartup("vnode-sync", "initialized");
 
+  dInfo("Init vnode management(4/6):vnode-commit");
   if (vnodeInit(tsNumOfCommitThreads) != 0) {
     dError("failed to init vnode since %s", terrstr());
     goto _OVER;
   }
   tmsgReportStartup("vnode-commit", "initialized");
 
+  dInfo("Init vnode management(5/6):vnode-worker");
   dInfo("vnode management start worker thread");
   if (vmStartWorker(pMgmt) != 0) {
     dError("failed to init workers since %s", terrstr());
@@ -453,6 +457,7 @@ static int32_t vmInit(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
   }
   tmsgReportStartup("vnode-worker", "initialized");
 
+  dInfo("Init vnode management(6/6):vnode-vnodes");
   if (vmOpenVnodes(pMgmt) != 0) {
     dError("failed to open vnode since %s", terrstr());
     goto _OVER;

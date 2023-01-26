@@ -17,7 +17,6 @@
 #include "dmMgmt.h"
 
 int32_t dmOpenNode(SMgmtWrapper *pWrapper) {
-  dInfo("ddmNodes:dmOpenNode()");
   SDnode *pDnode = pWrapper->pDnode;
 
   if (taosMkDir(pWrapper->path) != 0) {
@@ -29,13 +28,13 @@ int32_t dmOpenNode(SMgmtWrapper *pWrapper) {
   SMgmtOutputOpt output = {0};
   SMgmtInputOpt  input = dmBuildMgmtInputOpt(pWrapper);
 
-  dInfo("node instance name:%s, start to open", pWrapper->name);
+  dInfo("node:%s, start to open", pWrapper->name);
   tmsgSetDefault(&input.msgCb);
   if ((*pWrapper->func.openFp)(&input, &output) != 0) {
     dError("node:%s, failed to open since %s", pWrapper->name, terrstr());
     return -1;
   }
-  dInfo("node instance name:%s, has been opened", pWrapper->name);
+  dInfo("node:%s, has been opened", pWrapper->name);
   pWrapper->deployed = true;
 
   if (output.pMgmt != NULL) {
@@ -86,7 +85,11 @@ void dmCloseNode(SMgmtWrapper *pWrapper) {
 }
 
 static int32_t dmOpenNodes(SDnode *pDnode) {
-  dInfo("dmNodes:OpenNodes()");
+  /*
+  dmInt.c:dmOpenMgmt()
+  mmInt.c:mmOpen()
+  vmInt.c:vmInit()
+  */
   for (EDndNodeType ntype = DNODE; ntype < NODE_END; ++ntype) {
     SMgmtWrapper *pWrapper = &pDnode->wrappers[ntype];
     if (!pWrapper->required) continue;
