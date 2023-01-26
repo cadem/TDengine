@@ -120,7 +120,7 @@ static int32_t mmOpen(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
   }
   tmsgReportStartup("mnode-impl", "initialized");
 
-  dInfo("open mnode(5/5):start mnode management worker thread");
+  dInfo("open mnode(5/5):start worker thread");
   if (mmStartWorker(pMgmt) != 0) {
     dError("failed to start mnode worker since %s", terrstr());
     mmClose(pMgmt);

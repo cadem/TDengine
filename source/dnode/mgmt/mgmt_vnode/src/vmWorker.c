@@ -374,6 +374,7 @@ int32_t vmStartWorker(SVnodeMgmt *pMgmt) {
   pFPool->max = tsNumOfVnodeFetchThreads;
   if (tWWorkerInit(pFPool) != 0) return -1;
 
+  dInfo("start worker thread:vnode-mgmt:vmProcessMgmtQueue");
   SSingleWorkerCfg mgmtCfg = {
       .min = 1,
       .max = 1,

@@ -272,17 +272,18 @@ int mainWindows(int argc, char **argv) {
     return 0;
   }
 
-  printf("Init log ------------\n");
+  printf("Init log\n");
+  printf("start log thread:log:taosAsyncOutputLog\n");
   if (dmInitLog() != 0) {
     printf("failed to start since init log error\n");
     taosCleanupArgs();
     return -1;
   }
 
-  dInfo("Print Args ------------");
+  dInfo("Print Args");
   dmPrintArgs(argc, argv);
 
-  dInfo("Init config ------------");
+  dInfo("Init config");
   if (taosInitCfg(configDir, global.envCmd, global.envFile, global.apolloUrl, global.pArgs, 0) != 0) {
     dError("failed to start since read config error");
     taosCloseLog();
@@ -290,7 +291,7 @@ int mainWindows(int argc, char **argv) {
     return -1;
   }
 
-  dInfo("Init conv ------------");
+  dInfo("Init conv");
   if (taosConvInit() != 0) {
     dError("failed to init conv");
     taosCloseLog();
@@ -298,7 +299,7 @@ int mainWindows(int argc, char **argv) {
     return -1;
   }
 
-  dInfo("Dump config ------------");
+  dInfo("Dump config");
   if (global.dumpConfig) {
     dmDumpCfg();
     taosCleanupCfg();
@@ -308,7 +309,7 @@ int mainWindows(int argc, char **argv) {
     return 0;
   }
 
-  dInfo("Dump sdb ------------");
+  dInfo("Dump sdb");
   if (global.dumpSdb) {
     mndDumpSdb();
     taosCleanupCfg();
@@ -321,7 +322,7 @@ int mainWindows(int argc, char **argv) {
   osSetProcPath(argc, (char **)argv);
   taosCleanupArgs();
 
-  dInfo("Init ------------");
+  dInfo("Init:start thread")
   if (dmInit() != 0) {
     dError("failed to init dnode since %s", terrstr());
 

@@ -259,6 +259,7 @@ static void dmProcessMgmtQueue(SQueueInfo *pInfo, SRpcMsg *pMsg) {
 }
 
 int32_t dmStartWorker(SDnodeMgmt *pMgmt) {
+  dInfo("start worker thread:dnode-mgmt:dmProcessMgmtQueue")
   SSingleWorkerCfg cfg = {
       .min = 1,
       .max = 1,

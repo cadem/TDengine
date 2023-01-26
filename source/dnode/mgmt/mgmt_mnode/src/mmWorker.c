@@ -175,6 +175,7 @@ int32_t mmPutMsgToQueue(SMnodeMgmt *pMgmt, EQueueType qtype, SRpcMsg *pRpc) {
 }
 
 int32_t mmStartWorker(SMnodeMgmt *pMgmt) {
+  dInfo("worker thread:mnode-query:mmProcessRpcMsg");
   SSingleWorkerCfg qCfg = {
       .min = tsNumOfMnodeQueryThreads,
       .max = tsNumOfMnodeQueryThreads,
@@ -187,6 +188,7 @@ int32_t mmStartWorker(SMnodeMgmt *pMgmt) {
     return -1;
   }
 
+  dInfo("worker thread:mnode-fetch:mmProcessRpcMsg");
   SSingleWorkerCfg fCfg = {
       .min = tsNumOfMnodeFetchThreads,
       .max = tsNumOfMnodeFetchThreads,
@@ -199,6 +201,7 @@ int32_t mmStartWorker(SMnodeMgmt *pMgmt) {
     return -1;
   }
 
+  dInfo("worker thread:mnode-read:mmProcessRpcMsg");
   SSingleWorkerCfg rCfg = {
       .min = tsNumOfMnodeReadThreads,
       .max = tsNumOfMnodeReadThreads,
@@ -211,6 +214,7 @@ int32_t mmStartWorker(SMnodeMgmt *pMgmt) {
     return -1;
   }
 
+  dInfo("worker thread:mnode-write:mmProcessRpcMsg");
   SSingleWorkerCfg wCfg = {
       .min = 1,
       .max = 1,
@@ -223,6 +227,7 @@ int32_t mmStartWorker(SMnodeMgmt *pMgmt) {
     return -1;
   }
 
+  dInfo("worker thread:mnode-sync:mmProcessSyncMsg");
   SSingleWorkerCfg sCfg = {
       .min = 1,
       .max = 1,
@@ -235,6 +240,7 @@ int32_t mmStartWorker(SMnodeMgmt *pMgmt) {
     return -1;
   }
 
+  dInfo("worker thread:mnode-sync-ctrl:mmProcessSyncMsg");
   SSingleWorkerCfg scCfg = {
       .min = 1,
       .max = 1,
