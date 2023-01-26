@@ -47,9 +47,7 @@ int32_t dmOpenNode(SMgmtWrapper *pWrapper) {
 }
 
 int32_t dmStartNode(SMgmtWrapper *pWrapper) {
-  dInfo("node_mgmt:dmNodes.c:dmStartNode(){}");
   if (pWrapper->func.startFp != NULL) {
-    dInfo("node:%s, start to start", pWrapper->name);
     if ((*pWrapper->func.startFp)(pWrapper->pMgmt) != 0) {
       dError("node:%s, failed to start since %s", pWrapper->name, terrstr());
       return -1;
@@ -103,10 +101,10 @@ static int32_t dmOpenNodes(SDnode *pDnode) {
 }
 
 static int32_t dmStartNodes(SDnode *pDnode) {
-  dInfo("node_mgmt:dmNodes.c:dmStartNodes(){}");
   for (EDndNodeType ntype = DNODE; ntype < NODE_END; ++ntype) {
     SMgmtWrapper *pWrapper = &pDnode->wrappers[ntype];
     if (!pWrapper->required) continue;
+    dInfo("start to start node:%s", pWrapper->name);
     if (dmStartNode(pWrapper) != 0) {
       dError("node:%s, failed to start since %s", pWrapper->name, terrstr());
       return -1;
@@ -131,15 +129,14 @@ static void dmCloseNodes(SDnode *pDnode) {
 }
 
 int32_t dmRunDnode(SDnode *pDnode) {
-  dInfo("noe_mgmt:dmNodes.c:dmRunDnode(){}");
-  dInfo("node_mgmt:dmNodes.c:dmOpenNodes();")
+  dInfo("Run dnode(1/2):start to open all nodes")
   int32_t count = 0;
   if (dmOpenNodes(pDnode) != 0) {
     dError("failed to open nodes since %s", terrstr());
     return -1;
   }
 
-  dInfo("node_mgmt:dmNodes.c:dmStartNodes();");
+  dInfo("Run dnode(2/2):start to start all nodes");
   if (dmStartNodes(pDnode) != 0) {
     dError("failed to start nodes since %s", terrstr());
     return -1;
