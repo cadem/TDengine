@@ -140,7 +140,7 @@ static int32_t mmOpen(SMgmtInputOpt *pInput, SMgmtOutputOpt *pOutput) {
 }
 
 static int32_t mmStart(SMnodeMgmt *pMgmt) {
-  dInfo("mgmt_mnode:mmInt.c:mmStart(){}");
+  dInfo("start mnode (1/1):start mnode management");
   return mndStart(pMgmt->pMnode);
 }
 

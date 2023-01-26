@@ -572,7 +572,10 @@ void mndClose(SMnode *pMnode) {
 }
 
 int32_t mndStart(SMnode *pMnode) {
+  mInfo("start mnode management(1/4):start sync");
   mndSyncStart(pMnode);
+
+  mInfo("start mnode management(2/4):start deploy");
   if (pMnode->deploy) {
     if (sdbDeploy(pMnode->pSdb) != 0) {
       mError("failed to deploy sdb while start mnode");
@@ -581,8 +584,10 @@ int32_t mndStart(SMnode *pMnode) {
     mndSetRestored(pMnode, true);
   }
 
+  mInfo("start mnode management(3/4):start grant reset");
   grantReset(pMnode, TSDB_GRANT_ALL, 0);
 
+  mInfo("start mnode management(4/4):start init timer");
   return mndInitTimer(pMnode);
 }
 

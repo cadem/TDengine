@@ -514,7 +514,7 @@ static void *vmRestoreVnodeInThread(void *param) {
 }
 
 static int32_t vmStartVnodes(SVnodeMgmt *pMgmt) {
-  dInfo("mgmt_vnode:vmInt.c:vmStartVnodes(){}");
+  dInfo("start vnode(1/1):start vnode thread");
   int32_t     numOfVnodes = 0;
   SVnodeObj **ppVnodes = vmGetVnodeListFromHash(pMgmt, &numOfVnodes);
 

@@ -83,22 +83,26 @@ int64_t syncOpen(SSyncInfo* pSyncInfo) {
 }
 
 int32_t syncStart(int64_t rid) {
+  sInfo("start sync(1/4):acquire node");
   SSyncNode* pSyncNode = syncNodeAcquire(rid);
   if (pSyncNode == NULL) {
     sError("failed to acquire rid: %" PRId64 " of tsNodeReftId for pSyncNode", rid);
     return -1;
   }
 
+  sInfo("start sync(2/4):restore node");
   if (syncNodeRestore(pSyncNode) < 0) {
     sError("vgId:%d, failed to restore sync log buffer since %s", pSyncNode->vgId, terrstr());
     goto _err;
   }
 
+  sInfo("start sync(3/4):start node");
   if (syncNodeStart(pSyncNode) < 0) {
     sError("vgId:%d, failed to start sync node since %s", pSyncNode->vgId, terrstr());
     goto _err;
   }
 
+  sInfo("start sync(4/4):release node");
   syncNodeRelease(pSyncNode);
   return 0;
 

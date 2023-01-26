@@ -17,13 +17,16 @@
 #include "dmInt.h"
 
 static int32_t dmStartMgmt(SDnodeMgmt *pMgmt) {
-  dInfo("mgmt_dnode:dmInt.c:dmStartMgmt(){}");
+  dInfo("start dnode(1/1):start dnode management");
+  dInfo("start dnode management(1/3):start status thread");
   if (dmStartStatusThread(pMgmt) != 0) {
     return -1;
   }
+  dInfo("start dnode management(2/3):start monitor thread");
   if (dmStartMonitorThread(pMgmt) != 0) {
     return -1;
   }
+  dInfo("start dnode management(3/3):start crash report thread");
   if (dmStartCrashReportThread(pMgmt) != 0) {
     return -1;
   }
