@@ -322,7 +322,7 @@ int mainWindows(int argc, char **argv) {
   osSetProcPath(argc, (char **)argv);
   taosCleanupArgs();
 
-  dInfo("Init:start thread")
+  dInfo("Init Dnode")
   if (dmInit() != 0) {
     dError("failed to init dnode since %s", terrstr());
 
@@ -332,10 +332,10 @@ int mainWindows(int argc, char **argv) {
     return -1;
   }
 
-  dInfo("start to init service ------------");
+  dInfo("start to init service");
   dmSetSignalHandle();
   int32_t code = dmRun();
-  dInfo("shutting down the service ------------");
+  dInfo("shutting down the service");
 
   dmCleanup();
   return code;

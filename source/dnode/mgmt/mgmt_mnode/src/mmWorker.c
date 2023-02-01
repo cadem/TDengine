@@ -90,7 +90,10 @@ static void mmProcessSyncMsg(SQueueInfo *pInfo, SRpcMsg *pMsg) {
 
 static inline int32_t mmPutMsgToWorker(SMnodeMgmt *pMgmt, SSingleWorker *pWorker, SRpcMsg *pMsg) {
   const STraceId *trace = &pMsg->info.traceId;
-
+  //if(pMsg->msgType!=TDMT_MND_STATUS){
+  //  dInfo("mmPutMsgToWorker put into %s queue, type:%s", pWorker->name, TMSG_INFO(pMsg->msgType));
+  //}
+  
   if (mmAcquire(pMgmt) == 0) {
     dGTrace("msg:%p, put into %s queue, type:%s", pMsg, pWorker->name, TMSG_INFO(pMsg->msgType));
     taosWriteQitem(pWorker->queue, pMsg);

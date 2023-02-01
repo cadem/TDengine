@@ -84,6 +84,7 @@ static void *tQWorkerThreadFp(SQWorker *worker) {
     }
 
     if (qinfo.fp != NULL) {
+      //uInfo("tQWorkerThreadFp:%s:%d is running, thread:%08" PRId64, pool->name, worker->id, worker->pid);
       qinfo.workerId = worker->id;
       qinfo.threadNum = pool->num;
       (*((FItem)qinfo.fp))(&qinfo, msg);
