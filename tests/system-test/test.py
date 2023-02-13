@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 ###################################################################
 #           Copyright (c) 2016 by TAOS Technologies, Inc.
 #                     All rights reserved.
@@ -402,7 +402,8 @@ if __name__ == "__main__":
         except:
             pass
         if is_test_framework:
-            moduleName = fileName.replace(".py", "").replace("/", ".")
+            currentPath = os.getcwd()
+            moduleName = fileName.replace(currentPath+os.sep, "").replace(".py", "").replace(os.sep, ".")
             uModule = importlib.import_module(moduleName)
             try:
                 ucase = uModule.TDTestCase()

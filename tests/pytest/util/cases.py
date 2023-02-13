@@ -34,7 +34,8 @@ class TDCases:
         self.clusterCases = []
 
     def __dynamicLoadModule(self, fileName):
-        moduleName = fileName.replace(".py", "").replace(os.sep, ".")
+        currentPath = os.getcwd()
+        moduleName = fileName.replace(currentPath+os.sep, "").replace(".py", "").replace(os.sep, ".")
         return importlib.import_module(moduleName, package='..')
 
     def logSql(self, logSql):

@@ -318,7 +318,7 @@ class TDDnode:
                     cmd = "nohup %s -c %s > /dev/null 2> %s & " % (
                         binPath, self.cfgDir, asanDir)
                 else:
-                    cmd = "nohup %s -c %s > /dev/null 2>&1 & " % (
+                    cmd = "nohup %s -c %s > output.file 2>&1 & " % (
                         binPath, self.cfgDir)
         else:
             valgrindCmdline = "valgrind --log-file=\"%s/../log/valgrind.log\"  --tool=memcheck --leak-check=full --show-reachable=no --track-origins=yes --show-leak-kinds=all -v --workaround-gcc296-bugs=yes"%self.cfgDir
@@ -339,7 +339,7 @@ class TDDnode:
             if os.system(cmd) != 0:
                 tdLog.exit(cmd)
             self.running = 1
-            tdLog.debug("dnode:%d is running with %s " % (self.index, cmd))
+            tdLog.debug("dnode:%d mydb %s " % (self.index, cmd))
             if self.valgrind == 0:
                 time.sleep(0.1)
                 key1 = 'from offline to online'
@@ -402,10 +402,10 @@ class TDDnode:
                 if self.asan:
                     asanDir = "%s/sim/asan/dnode%d.asan" % (
                         self.path, self.index)
-                    cmd = "nohup %s -c %s > /dev/null 2> %s & " % (
+                    cmd = "nohup %s -c %s > out.file 2> %s & " % (
                         binPath, self.cfgDir, asanDir)
                 else:
-                    cmd = "nohup %s -c %s > /dev/null 2>&1 & " % (
+                    cmd = "HEAPCHECK=normal %s -c %s >> out.file 2>&1 & " % (
                         binPath, self.cfgDir)
         else:
             valgrindCmdline = "valgrind --log-file=\"%s/../log/valgrind.log\"  --tool=memcheck --leak-check=full --show-reachable=no --track-origins=yes --show-leak-kinds=all -v --workaround-gcc296-bugs=yes"%self.cfgDir
@@ -427,7 +427,7 @@ class TDDnode:
             if os.system(cmd) != 0:
                 tdLog.exit(cmd)
             self.running = 1
-            tdLog.debug("dnode:%d is running with %s " % (self.index, cmd))
+            tdLog.debug("dnode:%d mydb %s " % (self.index, cmd))
             if self.valgrind == 0:
                 time.sleep(0.1)
                 key = 'from offline to online'
@@ -472,7 +472,7 @@ class TDDnode:
                cmd = "nohup %s -c %s > /dev/null 2> %s & " % (
                    binPath, self.cfgDir, asanDir)
             else:
-                cmd = "nohup %s -c %s > /dev/null 2>&1 & " % (
+                cmd = "nohup %s -c %s > out.file2 2>&1 & " % (
                     binPath, self.cfgDir)
         else:
             valgrindCmdline = "valgrind  --log-file=\"%s/../log/valgrind.log\"  --tool=memcheck --leak-check=full --show-reachable=no --track-origins=yes --show-leak-kinds=all -v --workaround-gcc296-bugs=yes"%self.cfgDir
@@ -489,7 +489,7 @@ class TDDnode:
             self.remoteExec(self.cfgDict, "tdDnodes.dnodes[%d].deployed=1\ntdDnodes.dnodes[%d].logDir=\"%%s/sim/dnode%%d/log\"%%(tdDnodes.dnodes[%d].path,%d)\ntdDnodes.dnodes[%d].cfgDir=\"%%s/sim/dnode%%d/cfg\"%%(tdDnodes.dnodes[%d].path,%d)\ntdDnodes.startWithoutSleep(%d)"%(self.index-1,self.index-1,self.index-1,self.index,self.index-1,self.index-1,self.index,self.index))
 
         self.running = 1
-        tdLog.debug("dnode:%d is running with %s " % (self.index, cmd))
+        tdLog.debug("dnode:%d mydb %s " % (self.index, cmd))
 
     def stop(self):
         if self.asan:
