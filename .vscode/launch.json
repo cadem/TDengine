@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceFolder}/tests/system-test",
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/tests/system-test/test.py",
+            "args": ["-f", "${file}"],
+            "console": "integratedTerminal"
+        }
+    ]
+}
