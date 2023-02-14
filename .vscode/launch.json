@@ -7,8 +7,20 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/tests/system-test/test.py",
-            "args": ["-f", "${file}"],
+            "args" : ["${input:chooseArgs}"],
             "console": "integratedTerminal"
+        }
+    ],
+    "inputs": [
+        {
+          "id": "chooseArgs",
+          "type": "command",
+          "command": "extension.commandvariable.transform",
+          "args": {
+            "text": "-f ${relativeFile}", //strange, 每个空格前都会加个\
+            "find": "\\ tests\/system-test\/", 
+            "replace": ""
+          }
         }
     ]
 }
