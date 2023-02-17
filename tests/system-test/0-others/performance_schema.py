@@ -38,26 +38,27 @@ class TDTestCase:
         self.appName = "python3.10" #todo need to set to fixed name
         self.ipAdd= "127.0.0.1";
         self.transTestDBName = "dbwithvgroup"
+        self.lastTranAction = "action:40 code:0x111(Action in progress) msgType:create-vnode numOfEps:1 inUse:0 ep:0-localhost:6030 "
         self.column_dict = {
-            'ts'  : 'timestamp',
-            'col1': 'tinyint',
-            'col2': 'smallint',
-            'col3': 'int',
-            'col4': 'bigint',
-            'col5': 'tinyint unsigned',
-            'col6': 'smallint unsigned',
-            'col7': 'int unsigned',
-            'col8': 'bigint unsigned',
-            'col9': 'float',
-            'col10': 'double',
-            'col11': 'bool',
-            'col12': f'binary({self.binary_length})',
-            'col13': f'nchar({self.nchar_length})'
-        }
+            'ts'  : 'timestamp',                        #8
+            'col1': 'tinyint',                          #1
+            'col2': 'smallint',                         #2
+            'col3': 'int',                              #4                 
+            'col4': 'bigint',                           #8
+            'col5': 'tinyint unsigned',                 #1
+            'col6': 'smallint unsigned',                #2
+            'col7': 'int unsigned',                     #4
+            'col8': 'bigint unsigned',                  #8
+            'col9': 'float',                            #4
+            'col10': 'double',                          #8
+            'col11': 'bool',                            #1
+            'col12': f'binary({self.binary_length})',   #20 + 2
+            'col13': f'nchar({self.nchar_length})'      #20 + 2
+        }                                               #95
         self.tbnum = 20
         self.rowNum = 10
         self.tag_dict = {
-            't0':'int'
+            't0':'int'                                  #4
         }
         self.tag_values = [
             f'1'
@@ -76,30 +77,27 @@ class TDTestCase:
             self.setsql.insert_values(column_dict,i,insert_sql,insert_list,self.ts)
 
     def prepare_data(self):
-        tdSql.execute(f"create database if not exists {self.dbname} vgroups 2")
-        tdSql.execute(f'use {self.dbname}')
+        tdSql.execute(f"create database if not exists {self.dbname} vgroups 2")                                         #1 query
+        tdSql.execute(f'use {self.dbname}')                                                                             #1 query
 
-        tdSql.execute(self.setsql.set_create_stable_sql(self.stbname,self.column_dict,self.tag_dict))
+        tdSql.execute(self.setsql.set_create_stable_sql(self.stbname,self.column_dict,self.tag_dict))                   #1 query
+        
+        for i in range(self.tbnum):                                                                                     #self.tbnum query
+            tdSql.execute(f"create table {self.stbname}_{i} using {self.stbname} tags({self.tag_values[0]})")           #self.tbnum query
+            self.insert_data(self.column_dict,f'{self.stbname}_{i}',self.rowNum)                                        #self.stbname*self.rowNum query
         
         for i in range(self.tbnum):
-            tdSql.execute(f"create table {self.stbname}_{i} using {self.stbname} tags({self.tag_values[0]})")
-            self.insert_data(self.column_dict,f'{self.stbname}_{i}',self.rowNum)
-        
-        for i in range(self.tbnum):
-            tdSql.execute(f"select * from {self.stbname}_{i}")
+            tdSql.execute(f"select * from {self.stbname}_{i}")                                                          #self.tbnum query
 
     class myThread (threading.Thread):
         def __init__(self, obj):
             threading.Thread.__init__(self)
             self.obj = obj
         def run(self):
-            self.obj.transactionSQL()
-
-    def transactionSQL(self):
-        tdSqlTran = TDSql()
-        tdSqlTran.init(self.conn.cursor())
-        tdSqlTran.execute(f"create database if not exists %s vgroups 20"%(self.transTestDBName))
-        tdSqlTran.execute(f"DROP DATABASE %s"%(self.transTestDBName))
+            tdSqlTran = TDSql()
+            tdSqlTran.init(self.obj.conn.cursor())
+            tdSqlTran.execute(f"create database if not exists %s vgroups 20"%(self.obj.transTestDBName))
+            tdSqlTran.execute(f"DROP DATABASE %s"%(self.obj.transTestDBName))
 
     def init_tmq_env(self, db, topic):
         self.conn.execute("drop topic if exists {}".format(topic))
@@ -111,25 +109,29 @@ class TDTestCase:
 
     def count_check(self):
         sleep(1) #performance table delay
-        tdSql.query('select * from performance_schema.perf_apps')
+        tdSql.query('select * from performance_schema.perf_apps')                                                            #1 query
         rowIndex = 0 #for debug
         tdSql.checkRows(1)
-        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][0], 0)          #column 0:app_id
-        tdSql.checkEqual(tdSql.queryResult[rowIndex][1],self.ipAdd)     #column 1:ip
-        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][2], 0)          #column 2:pid
-        tdLog.info(os.getppid())        #  not match               
-        tdSql.checkEqual(tdSql.queryResult[rowIndex][3],self.appName)   #column 3:name              
-        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][4], 0)          #column 4:start_time
-        tdSql.checkEqual(tdSql.queryResult[rowIndex][5], 0)             #column 5:insert_req       # zero ???
-        tdSql.checkEqual(tdSql.queryResult[rowIndex][6],200)            #column 6:insert_row
-        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][7], 0)          #column 7:insert_time
-        tdSql.checkEqual(tdSql.queryResult[rowIndex][8],32000)          #column 8:insert_bytes      #calculate this field
-        tdSql.checkEqual(tdSql.queryResult[rowIndex][9], 0)             #column 9:fetch_bytes       # zero ???
-        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][10], 0)         #column 10:query_time       
-        tdSql.checkEqual(tdSql.queryResult[rowIndex][11],0)             #column 11:slow_query       #how to construct a slow query
-        tdSql.checkEqual(tdSql.queryResult[rowIndex][12],244)           #column 11:total_req
-        tdSql.checkEqual(tdSql.queryResult[rowIndex][13], 1)            #column 13:current_req
-        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][14], 0)         #column 14:last_access
+        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][0], 0)                              #column 0:app_id
+        tdSql.checkEqual(tdSql.queryResult[rowIndex][1],self.ipAdd)                         #column 1:ip
+        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][2], 0)                              #column 2:pid               # child process
+        P = psutil.Process()
+        tdLog.info(P)
+        chi = P.children()
+        #p1_pid = str(chi[0])
+        tdLog.info(chi)                    
+        tdSql.checkEqual(tdSql.queryResult[rowIndex][3],self.appName)                       #column 3:name              
+        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][4], 0)                              #column 4:start_time
+        tdSql.checkEqual(tdSql.queryResult[rowIndex][5], 0)                                 #column 5:insert_req       # zero ???
+        tdSql.checkEqual(tdSql.queryResult[rowIndex][6],self.tbnum * self.rowNum)           #column 6:insert_row
+        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][7], 0)                              #column 7:insert_time
+        tdSql.checkEqual(tdSql.queryResult[rowIndex][8],self.tbnum * self.rowNum * 160)     #column 8:insert_bytes     # 160 bytes ???
+        tdSql.checkEqual(tdSql.queryResult[rowIndex][9], 0)                                 #column 9:fetch_bytes       # zero ???
+        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][10], 0)                             #column 10:query_time       
+        tdSql.checkEqual(tdSql.queryResult[rowIndex][11],0)                                 #column 11:slow_query       
+        tdSql.checkEqual(tdSql.queryResult[rowIndex][12],self.tbnum * self.rowNum + self.tbnum * 2 + 4)                               #column 11:total_req
+        tdSql.checkEqual(tdSql.queryResult[rowIndex][13], 1)                                #column 13:current_req
+        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][14], 0)                             #column 14:last_access
 
 
         tdSql.query('select * from performance_schema.perf_connections')
@@ -184,7 +186,7 @@ class TDTestCase:
         tdSql.checkEqual(tdSql.queryResult[0][9],0)                     #stable_query
         tdSql.checkEqual(tdSql.queryResult[0][10],1)                    #sub_num
         tdSql.checkEqual(tdSql.queryResult[0][11],"243:SUCCEED")        #sub_status   
-
+        
         t1 = self.myThread(self) 
         t1.start()                           
         
@@ -198,12 +200,13 @@ class TDTestCase:
         tdSql.checkNotEqual(tdSql.queryResult[0][5],0)                  #stable
         tdSql.checkEqual(tdSql.queryResult[0][6],0)                     #failed_times
         tdSql.checkNotEqual(tdSql.queryResult[0][7],0)                  #last_exec_time
-        tdSql.checkNotEqual(tdSql.queryResult[0][8],0)                  #last_action_info
+        tdSql.checkEqual(tdSql.queryResult[0][8],self.lastTranAction)   #last_action_info
 
         t1.join()
 
-        #tdSql.query('select count(*) from performance_schema.perf_smas')
-        #tdSql.checkEqual(tdSql.queryResult[0][0],0)
+        tdSql.query('select * from performance_schema.perf_apps')
+        tdSql.checkNotEqual(tdSql.queryResult[rowIndex][11],0)             #column 11:slow_query  at least one slow query: create db.
+
     def run(self):
         self.prepare_data()
         self.count_check()
