@@ -1,0 +1,525 @@
+02/20 10:31:57.637332 00001350 UTL env file:.env not load
+02/20 10:31:57.637391 00001350 UTL apoll url not load
+02/20 10:31:57.637447 00001350 UTL load from cfg file /home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/cfg/taos.cfg success
+02/20 10:31:57.637462 00001350 UTL env file:.env not load
+02/20 10:31:57.637474 00001350 UTL load from env variables cfg success
+02/20 10:31:57.637479 00001350 UTL load from env cmd cfg success
+02/20 10:31:57.638019 00001350 DND Print Args
+02/20 10:31:57.638048 00001350 DND startup path:/home/ubuntu/github/cadem/TDengine/TDengine/tests/system-test args:/home/ubuntu/github/cadem/TDengine/TDengine/build/build/bin/taosd -c /home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/cfg
+02/20 10:31:57.638057 00001350 DND Init config
+02/20 10:31:57.638344 00001350 UTL env file:.env not load
+02/20 10:31:57.638376 00001350 UTL apoll url not load
+02/20 10:31:57.638482 00001350 UTL load from cfg file /home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/cfg/taos.cfg success
+02/20 10:31:57.638501 00001350 UTL env file:.env not load
+02/20 10:31:57.638513 00001350 UTL load from env variables cfg success
+02/20 10:31:57.638518 00001350 UTL load from env cmd cfg success
+02/20 10:31:57.638651 00001350 UTL                      global config
+02/20 10:31:57.638660 00001350 UTL =================================================================
+02/20 10:31:57.638666 00001350 UTL default      firstEp                  HOME-LAPTOP-HUAWEI.:6030
+02/20 10:31:57.638671 00001350 UTL default      secondEp                 HOME-LAPTOP-HUAWEI.:6030
+02/20 10:31:57.638677 00001350 UTL default      fqdn                     HOME-LAPTOP-HUAWEI.
+02/20 10:31:57.638682 00001350 UTL default      serverPort               6030
+02/20 10:31:57.638688 00001350 UTL default      tempDir                  /tmp/
+02/20 10:31:57.638693 00001350 UTL default      minimalTmpDirGB          1.00
+02/20 10:31:57.638701 00001350 UTL default      shellActivityTimer       3
+02/20 10:31:57.638707 00001350 UTL default      compressMsgSize          -1
+02/20 10:31:57.638714 00001350 UTL default      compressColData          -1
+02/20 10:31:57.638728 00001350 UTL default      queryPolicy              1
+02/20 10:31:57.638738 00001350 UTL cfg_file     enableQueryHb            1
+02/20 10:31:57.638746 00001350 UTL default      querySmaOptimize         0
+02/20 10:31:57.638754 00001350 UTL default      queryPlannerTrace        0
+02/20 10:31:57.638760 00001350 UTL default      queryNodeChunkSize       32768
+02/20 10:31:57.638766 00001350 UTL default      queryUseNodeAllocator    1
+02/20 10:31:57.638772 00001350 UTL default      keepColumnName           0
+02/20 10:31:57.638779 00001350 UTL default      smlChildTableName        
+02/20 10:31:57.638785 00001350 UTL default      smlTagName               _tag_null
+02/20 10:31:57.638791 00001350 UTL default      smlDataFormat            0
+02/20 10:31:57.638800 00001350 UTL default      smlBatchSize             10000
+02/20 10:31:57.638808 00001350 UTL default      maxMemUsedByInsert       1024
+02/20 10:31:57.638814 00001350 UTL default      maxRetryWaitTime         10000
+02/20 10:31:57.638820 00001350 UTL default      useAdapter               0
+02/20 10:31:57.638826 00001350 UTL default      crashReporting           1
+02/20 10:31:57.638832 00001350 UTL default      numOfTaskQueueThreads    4
+02/20 10:31:57.638838 00001350 UTL cfg_file     dataDir                  /home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data
+02/20 10:31:57.638844 00001350 UTL default      minimalDataDirGB         2.00
+02/20 10:31:57.638851 00001350 UTL cfg_file     supportVnodes            1024
+02/20 10:31:57.638857 00001350 UTL cfg_file     maxShellConns            30000
+02/20 10:31:57.638863 00001350 UTL cfg_file     statusInterval           1
+02/20 10:31:57.638868 00001350 UTL default      minSlidingTime           10
+02/20 10:31:57.638874 00001350 UTL default      minIntervalTime          1
+02/20 10:31:57.638880 00001350 UTL default      maxNumOfDistinctRes      10000000
+02/20 10:31:57.638886 00001350 UTL default      countAlwaysReturnValue   1
+02/20 10:31:57.638903 00001350 UTL default      queryBufferSize          -1
+02/20 10:31:57.638909 00001350 UTL default      printAuth                0
+02/20 10:31:57.638915 00001350 UTL default      queryRspPolicy           0
+02/20 10:31:57.638924 00001350 UTL default      numOfRpcThreads          4
+02/20 10:31:57.638930 00001350 UTL default      numOfCommitThreads       4
+02/20 10:31:57.638936 00001350 UTL default      numOfMnodeReadThreads    1
+02/20 10:31:57.638942 00001350 UTL default      numOfVnodeQueryThreads   16
+02/20 10:31:57.638948 00001350 UTL default      ratioOfVnodeStreamThrea  1.00
+02/20 10:31:57.638954 00001350 UTL default      numOfVnodeFetchThreads   4
+02/20 10:31:57.638960 00001350 UTL default      numOfVnodeRsmaThreads    8
+02/20 10:31:57.638966 00001350 UTL default      numOfQnodeQueryThreads   16
+02/20 10:31:57.638972 00001350 UTL default      numOfSnodeSharedThreads  2
+02/20 10:31:57.638978 00001350 UTL default      numOfSnodeUniqueThreads  2
+02/20 10:31:57.638984 00001350 UTL default      rpcQueueMemoryAllowed    776991948
+02/20 10:31:57.638999 00001350 UTL default      syncElectInterval        25000
+02/20 10:31:57.639011 00001350 UTL default      syncHeartbeatInterval    1000
+02/20 10:31:57.639019 00001350 UTL default      syncHeartbeatTimeout     20000
+02/20 10:31:57.639026 00001350 UTL default      vndCommitMaxInterval     60000
+02/20 10:31:57.639033 00001350 UTL cfg_file     monitor                  0
+02/20 10:31:57.639040 00001350 UTL default      monitorInterval          30
+02/20 10:31:57.639046 00001350 UTL default      monitorFqdn              
+02/20 10:31:57.639052 00001350 UTL default      monitorPort              6043
+02/20 10:31:57.639059 00001350 UTL default      monitorMaxLogs           100
+02/20 10:31:57.639065 00001350 UTL default      monitorComp              0
+02/20 10:31:57.639071 00001350 UTL default      crashReporting           1
+02/20 10:31:57.639078 00001350 UTL cfg_file     telemetryReporting       0
+02/20 10:31:57.639085 00001350 UTL default      telemetryInterval        43200
+02/20 10:31:57.639091 00001350 UTL default      telemetryServer          telemetry.taosdata.com
+02/20 10:31:57.639097 00001350 UTL default      telemetryPort            80
+02/20 10:31:57.639103 00001350 UTL default      transPullupInterval      2
+02/20 10:31:57.639110 00001350 UTL default      mqRebalanceInterval      2
+02/20 10:31:57.639116 00001350 UTL default      ttlUnit                  86400
+02/20 10:31:57.639122 00001350 UTL default      ttlPushInterval          86400
+02/20 10:31:57.639128 00001350 UTL default      uptimeInterval           300
+02/20 10:31:57.639134 00001350 UTL default      queryRsmaTolerance       1000
+02/20 10:31:57.639140 00001350 UTL default      walFsyncDataSizeLimit    104857600
+02/20 10:31:57.639146 00001350 UTL default      udf                      1
+02/20 10:31:57.639152 00001350 UTL default      udfdResFuncs             
+02/20 10:31:57.639158 00001350 UTL default      udfdLdLibPath            
+02/20 10:31:57.639164 00001350 UTL default      configDir                /home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/cfg
+02/20 10:31:57.639171 00001350 UTL default      scriptDir                /home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/cfg
+02/20 10:31:57.639177 00001350 UTL cfg_file     logDir                   /home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/log
+02/20 10:31:57.639183 00001350 UTL default      minimalLogDirGB          1.00
+02/20 10:31:57.639191 00001350 UTL cfg_file     numOfLogLines            100000000
+02/20 10:31:57.639197 00001350 UTL cfg_file     asyncLog                 0
+02/20 10:31:57.639203 00001350 UTL default      logKeepDays              0
+02/20 10:31:57.639209 00001350 UTL default      debugFlag                0
+02/20 10:31:57.639215 00001350 UTL default      simDebugFlag             143
+02/20 10:31:57.639221 00001350 UTL cfg_file     tmrDebugFlag             131
+02/20 10:31:57.639227 00001350 UTL cfg_file     uDebugFlag               143
+02/20 10:31:57.639233 00001350 UTL cfg_file     rpcDebugFlag             143
+02/20 10:31:57.639248 00001350 UTL cfg_file     jniDebugFlag             143
+02/20 10:31:57.639255 00001350 UTL cfg_file     qDebugFlag               143
+02/20 10:31:57.639261 00001350 UTL cfg_file     cDebugFlag               143
+02/20 10:31:57.639271 00001350 UTL cfg_file     dDebugFlag               143
+02/20 10:31:57.639277 00001350 UTL cfg_file     vDebugFlag               143
+02/20 10:31:57.639283 00001350 UTL cfg_file     mDebugFlag               143
+02/20 10:31:57.639289 00001350 UTL cfg_file     wDebugFlag               143
+02/20 10:31:57.639295 00001350 UTL cfg_file     sDebugFlag               143
+02/20 10:31:57.639301 00001350 UTL default      tsdbDebugFlag            131
+02/20 10:31:57.639307 00001350 UTL cfg_file     tqDebugFlag              143
+02/20 10:31:57.639313 00001350 UTL default      fsDebugFlag              131
+02/20 10:31:57.639319 00001350 UTL default      udfDebugFlag             131
+02/20 10:31:57.639325 00001350 UTL default      smaDebugFlag             131
+02/20 10:31:57.639331 00001350 UTL default      idxDebugFlag             131
+02/20 10:31:57.639337 00001350 UTL default      tdbDebugFlag             131
+02/20 10:31:57.639344 00001350 UTL default      metaDebugFlag            131
+02/20 10:31:57.639351 00001350 UTL default      timezone                 Asia/Shanghai (CST, +0800)
+02/20 10:31:57.639358 00001350 UTL cfg_file     locale                   en_US.UTF-8
+02/20 10:31:57.639365 00001350 UTL cfg_file     charset                  UTF-8
+02/20 10:31:57.639374 00001350 UTL default      assert                   1
+02/20 10:31:57.639383 00001350 UTL default      enableCoreFile           1
+02/20 10:31:57.639390 00001350 UTL default      numOfCores               8.00
+02/20 10:31:57.639398 00001350 UTL default      SSE42                    1
+02/20 10:31:57.639404 00001350 UTL default      AVX                      1
+02/20 10:31:57.639411 00001350 UTL default      AVX2                     1
+02/20 10:31:57.639418 00001350 UTL default      FMA                      1
+02/20 10:31:57.639424 00001350 UTL default      SIMD-builtins            0
+02/20 10:31:57.639431 00001350 UTL default      openMax                  1048576
+02/20 10:31:57.639438 00001350 UTL default      streamMax                16
+02/20 10:31:57.639445 00001350 UTL default      pageSizeKB               4
+02/20 10:31:57.639452 00001350 UTL default      totalMemoryKB            7587812
+02/20 10:31:57.639459 00001350 UTL default      os sysname               Linux
+02/20 10:31:57.639466 00001350 UTL default      os nodename              HOME-LAPTOP-HUAWEI
+02/20 10:31:57.639472 00001350 UTL default      os release               5.15.79.1-microsoft-standard-WSL2
+02/20 10:31:57.639479 00001350 UTL default      os version               #1 SMP Wed Nov 23 01:01:46 UTC 2022
+02/20 10:31:57.639487 00001350 UTL default      os machine               x86_64
+02/20 10:31:57.639494 00001350 UTL default      version                  3.0.2.4
+02/20 10:31:57.639502 00001350 UTL default      compatible_version       3.0.0.0
+02/20 10:31:57.639509 00001350 UTL default      gitinfo                  c4bc37e5a4d79f70f052e9cf21c98f2289713006
+02/20 10:31:57.639517 00001350 UTL default      buildinfo                Built at 2023-02-06 22:19:01
+02/20 10:31:57.639525 00001350 UTL =================================================================
+02/20 10:31:57.640130 00001350 DND Init conv
+02/20 10:31:57.644472 00001350 DND Dump config
+02/20 10:31:57.644635 00001350 DND Dump sdb
+02/20 10:31:57.644649 00001350 DND Init Dnode
+02/20 10:31:57.644657 00001350 DND start to init dnode env
+02/20 10:31:57.645499 00001350 DND dnode file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/dnode/dnode.json not exist
+02/20 10:31:57.646000 00001350 DND mnode file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode/mnode.json not exist
+02/20 10:31:57.646039 00001350 DND file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/qnode/qnode.json not exist
+02/20 10:31:57.646059 00001350 DND file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/snode/snode.json not exist
+02/20 10:31:57.652480 00001350 DND dnode env is initialized
+02/20 10:31:57.652501 00001350 DND start to init service
+02/20 10:31:57.652514 00001350 DND start Run Dnode
+02/20 10:31:57.652522 00001350 DND Run dnode(1/2):start to open all nodes
+02/20 10:31:57.653019 00001350 DND node:dnode, start to open
+02/20 10:31:57.653064 00001350 DND open dnode(1/2):begin worker thread
+02/20 10:31:57.653074 00001350 DND start worker thread:dnode-mgmt:dmProcessMgmtQueue
+02/20 10:31:57.653090 00001350 UTL worker:dnode-mgmt is initialized, min:1 max:1
+02/20 10:31:57.653258 00001350 UTL worker:dnode-mgmt:0 is launched, total:1
+02/20 10:31:57.653283 00001350 UTL worker:dnode-mgmt, queue:0x561e6b1c4310 is allocated, ahandle:0x561e6b1c4140
+02/20 10:31:57.653297 00001350 DND open dnode(2/2):start Udfd
+02/20 10:31:57.653313 00001361 UTL worker:dnode-mgmt:0 is running, thread:00001361
+02/20 10:31:57.654876 00001362 UDF start to init udfd
+02/20 10:31:57.654989 00001362 UDF udfd LD_LIBRARY_PATH: :
+02/20 10:31:57.723214 00001362 UDF udfd is initialized
+02/20 10:31:57.723398 00001350 DND node:dnode, has been opened
+02/20 10:31:57.723852 00001350 DND node:mnode, start to open
+02/20 10:31:57.723890 00001350 DND open mnode(1/5):walInit
+02/20 10:31:57.725044 00001350 WAL wal module is initialized, rsetId:3
+02/20 10:31:57.725071 00001350 DND open mnode(2/5):syncInit
+02/20 10:31:57.730920 00001350 DND mnode file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode/mnode.json not exist
+02/20 10:31:57.730941 00001350 DND open mnode(3/5):deploy
+02/20 10:31:57.730951 00001350 DND mnode start to deploy
+02/20 10:31:57.730962 00001350 DND open mnode(4/5):open mnode
+02/20 10:31:57.730972 00001350 MND start to open mnode in /home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode
+02/20 10:31:57.737331 00001350 WAL vgId:1, reset commitVer to -1
+02/20 10:31:57.737455 00001350 MND mnode-wal is initialized
+02/20 10:31:57.738323 00001350 MND start to init sdb in /home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode
+02/20 10:31:57.739408 00001350 MND sdb init success
+02/20 10:31:57.739461 00001350 MND mnode-sdb is initialized
+02/20 10:31:57.740729 00001350 MND sdb table:trans is initialized
+02/20 10:31:57.740969 00001350 MND mnode-trans is initialized
+02/20 10:31:57.741612 00001350 MND sdb table:cluster is initialized
+02/20 10:31:57.741673 00001350 MND mnode-cluster is initialized
+02/20 10:31:57.741724 00001350 MND sdb table:mnode is initialized
+02/20 10:31:57.741736 00001350 MND mnode-mnode is initialized
+02/20 10:31:57.741752 00001350 MND sdb table:qnode is initialized
+02/20 10:31:57.741761 00001350 MND mnode-qnode is initialized
+02/20 10:31:57.741810 00001350 MND sdb table:snode is initialized
+02/20 10:31:57.741821 00001350 MND mnode-snode is initialized
+02/20 10:31:57.741869 00001350 MND sdb table:dnode is initialized
+02/20 10:31:57.741902 00001350 MND mnode-dnode is initialized
+02/20 10:31:57.741925 00001350 MND sdb table:user is initialized
+02/20 10:31:57.741934 00001350 MND mnode-user is initialized
+02/20 10:31:57.741946 00001350 MND mnode-grant is initialized
+02/20 10:31:57.741957 00001350 MND mnode-privilege is initialized
+02/20 10:31:57.741970 00001350 MND sdb table:acct is initialized
+02/20 10:31:57.741979 00001350 MND mnode-acct is initialized
+02/20 10:31:57.742825 00001350 MND sdb table:stream is initialized
+02/20 10:31:57.742944 00001350 MND mnode-stream is initialized
+02/20 10:31:57.742971 00001350 MND sdb table:topic is initialized
+02/20 10:31:57.742988 00001350 MND mnode-topic is initialized
+02/20 10:31:57.743011 00001350 MND sdb table:consumer is initialized
+02/20 10:31:57.743021 00001350 MND mnode-consumer is initialized
+02/20 10:31:57.743042 00001350 MND sdb table:subscribe is initialized
+02/20 10:31:57.743053 00001350 MND mnode-subscribe is initialized
+02/20 10:31:57.743071 00001350 MND sdb table:vgroup is initialized
+02/20 10:31:57.743096 00001350 MND mnode-vgroup is initialized
+02/20 10:31:57.743211 00001350 MND sdb table:stb is initialized
+02/20 10:31:57.743227 00001350 MND mnode-stb is initialized
+02/20 10:31:57.743256 00001350 MND sdb table:sma is initialized
+02/20 10:31:57.751834 00001350 MND mnode-sma is initialized
+02/20 10:31:57.751940 00001350 MND mnode-infos is initialized
+02/20 10:31:57.751972 00001350 MND mnode-perfs is initialized
+02/20 10:31:57.752083 00001350 MND sdb table:db is initialized
+02/20 10:31:57.752131 00001350 MND mnode-db is initialized
+02/20 10:31:57.752236 00001350 MND sdb table:func is initialized
+02/20 10:31:57.752314 00001350 MND mnode-func is initialized
+02/20 10:31:57.752370 00001350 MND mnode-sdb is initialized
+02/20 10:31:57.752667 00001350 MND mnode-profile is initialized
+02/20 10:31:57.752780 00001350 MND mnode-show is initialized
+02/20 10:31:57.755161 00001350 MND mnode-query is initialized
+02/20 10:31:57.755233 00001350 MND vgId:1, start to open sync, replica:1 selfIndex:0
+02/20 10:31:57.755254 00001350 MND vgId:1, index:0 ep:HOME-LAPTOP-HUAWEI.:6030 dnode:1 cluster:0
+02/20 10:31:57.756051 00001350 SYN vgId:0, create a new raft config file
+02/20 10:31:57.767546 00001350 SYN vgId:0, succeed to write sync cfg file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode/sync/raft_config.json, len:368
+02/20 10:31:57.767602 00001350 SYN vgId:1, start to open sync node, replica:1 selfIndex:0
+02/20 10:31:57.767616 00001350 SYN vgId:1, index:0 ep:HOME-LAPTOP-HUAWEI.:6030 dnode:1 cluster:0
+02/20 10:31:57.767710 00001350 SYN vgId:1, sync addr:1, dnode:1 cluster:0 fqdn:HOME-LAPTOP-HUAWEI. ip:127.0.1.1 port:6030 ipv4:16842879
+02/20 10:31:57.767782 00001350 SYN vgId:1, sync addr:1, dnode:1 cluster:0 fqdn:HOME-LAPTOP-HUAWEI. ip:127.0.1.1 port:6030 ipv4:16842879
+02/20 10:31:57.767806 00001350 SYN vgId:1, raft store file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode/sync/raft_store.json not exist, use default value
+02/20 10:31:57.771331 00001350 SYN vgId:1, succeed to write raft store file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode/sync/raft_store.json, len:68
+02/20 10:31:57.771988 00001350 SYN vgId:1, sync node commitIndex initialized as -1
+02/20 10:31:57.773361 00001350 SYN vgId:1, init sync log buffer. buffer: [-1 -1 -1, 0)
+02/20 10:31:57.773380 00001350 SYN vgId:1, sync open, node:0x561e6b231900 electInterval:25000 heartbeatInterval:1000 heartbeatTimeout:20000, sync:follower, term:0, commit-index:-1, first-ver:-1, last-ver:-1, min:-1, snap:-1, snap-term:18446744073709551615, elect-times:0, as-leader-times:0, cfg-ch-times:0, hb-slow:0, hbr-slow:0, aq-items:-1, snaping:-1, replicas:1, last-cfg:-1, chging:0, restore:0, quorum:1, elect-lc-timer:0, hb:0, buffer:[-1 -1 -1, 0), repl-mgrs:{0:0 [0 0, 0)}, members:{num:1, as:0, [HOME-LAPTOP-HUAWEI.:6030]}, hb:{0:1676860317771}, hb-reply:{0:1676860317771}
+02/20 10:31:57.773407 00001350 MND mnode-sync is opened, id:2
+02/20 10:31:57.773413 00001350 MND mnode-sync is initialized
+02/20 10:31:57.773590 00001350 MND mnode-telem is initialized
+02/20 10:31:57.773618 00001350 MND mnode open successfully
+02/20 10:31:57.773627 00001350 DND open mnode(5/5):start worker thread
+02/20 10:31:57.773633 00001350 DND worker thread:mnode-query:mmProcessRpcMsg
+02/20 10:31:57.773647 00001350 UTL worker:mnode-query is initialized, min:4 max:4
+02/20 10:31:57.773748 00001350 UTL worker:mnode-query:0 is launched, total:1
+02/20 10:31:57.773786 00001371 UTL worker:mnode-query:0 is running, thread:00001371
+02/20 10:31:57.777246 00001350 UTL worker:mnode-query:1 is launched, total:2
+02/20 10:31:57.777273 00001372 UTL worker:mnode-query:1 is running, thread:00001372
+02/20 10:31:57.777503 00001350 UTL worker:mnode-query:2 is launched, total:3
+02/20 10:31:57.777535 00001373 UTL worker:mnode-query:2 is running, thread:00001373
+02/20 10:31:57.777640 00001350 UTL worker:mnode-query:3 is launched, total:4
+02/20 10:31:57.777658 00001350 UTL worker:mnode-query, queue:0x561e6b2c5c00 is allocated, ahandle:0x561e6b1f2ec0
+02/20 10:31:57.777666 00001350 DND worker thread:mnode-fetch:mmProcessRpcMsg
+02/20 10:31:57.777713 00001350 UTL worker:mnode-fetch is initialized, min:1 max:1
+02/20 10:31:57.777670 00001374 UTL worker:mnode-query:3 is running, thread:00001374
+02/20 10:31:57.777899 00001350 UTL worker:mnode-fetch:0 is launched, total:1
+02/20 10:31:57.777916 00001375 UTL worker:mnode-fetch:0 is running, thread:00001375
+02/20 10:31:57.777919 00001350 UTL worker:mnode-fetch, queue:0x561e6b2c61e0 is allocated, ahandle:0x561e6b1f2ec0
+02/20 10:31:57.778010 00001350 DND worker thread:mnode-read:mmProcessRpcMsg
+02/20 10:31:57.778027 00001350 UTL worker:mnode-read is initialized, min:1 max:1
+02/20 10:31:57.778112 00001350 UTL worker:mnode-read:0 is launched, total:1
+02/20 10:31:57.778131 00001350 UTL worker:mnode-read, queue:0x561e6b2c6430 is allocated, ahandle:0x561e6b1f2ec0
+02/20 10:31:57.778132 00001376 UTL worker:mnode-read:0 is running, thread:00001376
+02/20 10:31:57.778139 00001350 DND worker thread:mnode-write:mmProcessRpcMsg
+02/20 10:31:57.778242 00001350 UTL worker:mnode-write is initialized, min:1 max:1
+02/20 10:31:57.778328 00001350 UTL worker:mnode-write:0 is launched, total:1
+02/20 10:31:57.778346 00001350 UTL worker:mnode-write, queue:0x561e6b2c6680 is allocated, ahandle:0x561e6b1f2ec0
+02/20 10:31:57.778355 00001377 UTL worker:mnode-write:0 is running, thread:00001377
+02/20 10:31:57.778365 00001350 DND worker thread:mnode-sync:mmProcessSyncMsg
+02/20 10:31:57.778479 00001350 UTL worker:mnode-sync is initialized, min:1 max:1
+02/20 10:31:57.778577 00001350 UTL worker:mnode-sync:0 is launched, total:1
+02/20 10:31:57.778595 00001350 UTL worker:mnode-sync, queue:0x561e6b2c68d0 is allocated, ahandle:0x561e6b1f2ec0
+02/20 10:31:57.778601 00001378 UTL worker:mnode-sync:0 is running, thread:00001378
+02/20 10:31:57.778603 00001350 DND worker thread:mnode-sync-ctrl:mmProcessSyncMsg
+02/20 10:31:57.778726 00001350 UTL worker:mnode-sync-ctrl is initialized, min:1 max:1
+02/20 10:31:57.778829 00001350 UTL worker:mnode-sync-ctrl:0 is launched, total:1
+02/20 10:31:57.778848 00001350 UTL worker:mnode-sync-ctrl, queue:0x561e6b2c6b20 is allocated, ahandle:0x561e6b1f2ec0
+02/20 10:31:57.778858 00001379 UTL worker:mnode-sync-ctrl:0 is running, thread:00001379
+02/20 10:31:57.783017 00001350 DND succeed to write mnode file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode/mnode.json, deloyed:1
+02/20 10:31:57.783075 00001350 DND node:mnode, has been opened
+02/20 10:31:57.783530 00001350 DND node:vnode, start to open
+02/20 10:31:57.783563 00001350 DND Init vnode management(1/6):vnode-tfs
+02/20 10:31:57.783677 00001350 DND Init vnode management(2/6):vnode-wal
+02/20 10:31:57.783698 00001350 DND Init vnode management(3/6):vnode-sync
+02/20 10:31:57.783713 00001350 DND Init vnode management(4/6):vnode-commit
+02/20 10:31:57.785224 00001350 DND Init vnode management(5/6):vnode-worker
+02/20 10:31:57.785260 00001350 UTL worker:vnode-query is initialized, min:16 max:16
+02/20 10:31:57.785273 00001350 UTL worker:vnode-stream is initialized as auto
+02/20 10:31:57.785280 00001350 UTL worker:vnode-fetch is initialized, max:4
+02/20 10:31:57.785287 00001350 DND start worker thread:vnode-mgmt:vmProcessMgmtQueue
+02/20 10:31:57.785299 00001350 UTL worker:vnode-mgmt is initialized, min:1 max:1
+02/20 10:31:57.785417 00001350 UTL worker:vnode-mgmt:0 is launched, total:1
+02/20 10:31:57.785435 00001350 UTL worker:vnode-mgmt, queue:0x561e6b2c8810 is allocated, ahandle:0x561e6b2c6cd0
+02/20 10:31:57.785445 00001384 UTL worker:vnode-mgmt:0 is running, thread:00001384
+02/20 10:31:57.785455 00001350 DND Init vnode management(6/6):vnode-vnodes
+02/20 10:31:57.785567 00001350 DND vnode file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/vnode/vnodes.json not exist
+02/20 10:31:57.785593 00001350 DND open 0 vnodes with 4 threads
+02/20 10:31:57.785605 00001350 DND successfully opened 0 vnodes
+02/20 10:31:57.785645 00001350 UDF get dnodeId:0 from env, pipe path:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/.udfd.sock.0
+02/20 10:31:57.785926 00001350 UDF udfc initialized
+02/20 10:31:57.785969 00001350 DND node:vnode, has been opened
+02/20 10:31:57.785993 00001350 DND Run dnode(2/2):start to start all nodes
+02/20 10:31:57.786000 00001350 DND start to start node:dnode
+02/20 10:31:57.786018 00001350 DND start dnode(1/1):start dnode management
+02/20 10:31:57.786029 00001350 DND start dnode management(1/3):start status thread
+02/20 10:31:57.786118 00001350 DND start dnode management(2/3):start monitor thread
+02/20 10:31:57.787506 00001350 DND start dnode management(3/3):start crash report thread
+02/20 10:31:57.787637 00001350 DND node:dnode, has been started
+02/20 10:31:57.787649 00001350 DND start to start node:mnode
+02/20 10:31:57.787656 00001350 DND start mnode (1/1):start mnode management
+02/20 10:31:57.787663 00001350 MND start mnode management(1/4):start sync
+02/20 10:31:57.787670 00001350 SYN start sync(1/4):acquire node
+02/20 10:31:57.787683 00001350 SYN start sync(2/4):restore node
+02/20 10:31:57.787693 00001350 SYN vgId:1, restore sync until commitIndex:-1
+02/20 10:31:57.787836 00001350 SYN start sync(3/4):start node
+02/20 10:31:57.792023 00001350 SYN vgId:1, succeed to write raft store file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode/sync/raft_store.json, len:68
+02/20 10:31:57.792075 00001350 MND vgId:1, become leader
+02/20 10:31:57.792082 00001350 SYN vgId:1, reset sync log buffer. buffer: [-1 -1 -1, 0)
+02/20 10:31:57.792099 00001350 SYN vgId:1, become leader one replica start, sync:leader, term:1, commit-index:-1, first-ver:-1, last-ver:-1, min:-1, snap:-1, snap-term:18446744073709551615, elect-times:0, as-leader-times:1, cfg-ch-times:0, hb-slow:0, hbr-slow:0, aq-items:-1, snaping:-1, replicas:1, last-cfg:-1, chging:0, restore:0, quorum:1, elect-lc-timer:1, hb:0, buffer:[-1 -1 -1, 0), repl-mgrs:{0:0 [0 0, 0)}, members:{num:1, as:0, [HOME-LAPTOP-HUAWEI.:6030]}, hb:{0:1676860317771}, hb-reply:{0:1676860317771}
+02/20 10:31:57.802598 00001350 SYN vgId:1, commit sync barrier. index: 0, term:1, type: sync-noop
+02/20 10:31:57.802663 00001350 MND vgId:1, sync restore finished
+02/20 10:31:57.802671 00001350 SYN vgId:1, restore finished. log buffer: [-1 0 0, 1)
+02/20 10:31:57.802683 00001350 SYN start sync(4/4):release node
+02/20 10:31:57.802700 00001350 MND vgId:1, sync started, id:2
+02/20 10:31:57.802709 00001350 MND start mnode management(2/4):start deploy
+02/20 10:31:57.802717 00001350 MND start to deploy sdb
+02/20 10:31:57.802725 00001350 MND start to deploy sdb:acct
+02/20 10:31:57.802756 00001350 MND acct:root, will be created when deploying, raw:0x561e6b2cab70
+02/20 10:31:57.802790 00001350 MND trans:1, used to create acct:root
+02/20 10:31:57.802799 00001350 MND trans:1, prepare transaction
+02/20 10:31:57.802823 00001350 MND trans:1, sync to other mnodes, stage:prepare
+02/20 10:31:57.802838 00001350 MND trans:1, will be proposed
+02/20 10:31:57.803017 00001350 MND trans:1, is proposing and wait sem, seq:1
+02/20 10:31:57.806643 00001378 MND trans:1, is proposed, saved:1 code:0x0, apply index:1 term:1 config:-1 role:leader raw:0x7f8aa0000fab sec:1676860317 seq:1
+02/20 10:31:57.806711 00001378 MND trans:1, is proposed and post sem, seq:1
+02/20 10:31:57.806921 00001350 MND trans:1, sync finished
+02/20 10:31:57.807008 00001350 MND trans:1, prepare finished
+02/20 10:31:57.807139 00001350 MND trans:1, continue to execute, stage:prepare
+02/20 10:31:57.807161 00001350 MND trans:1, stage from prepare to redoAction
+02/20 10:31:57.807172 00001350 MND trans:1, continue to execute, stage:redoAction
+02/20 10:31:57.807242 00001350 MND trans:1, stage from redoAction to commit
+02/20 10:31:57.807262 00001350 MND trans:1, continue to execute, stage:commit
+02/20 10:31:57.807273 00001350 MND trans:1, commit transaction
+02/20 10:31:57.807307 00001350 MND trans:1, sync to other mnodes, stage:commit
+02/20 10:31:57.807323 00001350 MND trans:1, will be proposed
+02/20 10:31:57.807562 00001350 MND trans:1, is proposing and wait sem, seq:2
+02/20 10:31:57.811269 00001378 MND trans:1, is proposed, saved:1 code:0x0, apply index:2 term:1 config:-1 role:leader raw:0x7f8aa00060ab sec:1676860317 seq:2
+02/20 10:31:57.812454 00001378 MND trans:1, is proposed and post sem, seq:2
+02/20 10:31:57.812618 00001350 MND trans:1, sync finished
+02/20 10:31:57.812674 00001350 MND trans:1, commit finished
+02/20 10:31:57.812699 00001350 MND trans:1, stage from commit to commitAction
+02/20 10:31:57.812709 00001350 MND trans:1, continue to execute, stage:commitAction
+02/20 10:31:57.812834 00001350 MND trans:1, commitAction:0 write to sdb, type:acct status:ready
+02/20 10:31:57.812916 00001350 MND trans:1, all 1 actions execute successfully
+02/20 10:31:57.812930 00001350 MND trans:1, stage from commitAction to finished
+02/20 10:31:57.812938 00001350 MND trans:1, continue to execute, stage:finished
+02/20 10:31:57.813027 00001350 MND trans:1, execute finished, code:0x0, failedTimes:0
+02/20 10:31:57.813036 00001350 MND trans:1, send rsp, stage:finished failedTimes:0 code:0x0
+02/20 10:31:57.813087 00001350 MND start to deploy sdb:user
+02/20 10:31:57.813113 00001350 MND user:root, will be created when deploying, raw:0x561e6b2ca250
+02/20 10:31:57.813132 00001350 MND trans:2, used to create user:root
+02/20 10:31:57.813141 00001350 MND trans:2, prepare transaction
+02/20 10:31:57.813160 00001350 MND trans:2, sync to other mnodes, stage:prepare
+02/20 10:31:57.813175 00001350 MND trans:2, will be proposed
+02/20 10:31:57.813346 00001350 MND trans:2, is proposing and wait sem, seq:3
+02/20 10:31:57.816390 00001378 MND trans:2, is proposed, saved:2 code:0x0, apply index:3 term:1 config:-1 role:leader raw:0x7f8aa000649b sec:1676860317 seq:3
+02/20 10:31:57.816468 00001378 MND trans:2, is proposed and post sem, seq:3
+02/20 10:31:57.816600 00001350 MND trans:2, sync finished
+02/20 10:31:57.816613 00001350 MND trans:2, prepare finished
+02/20 10:31:57.816631 00001350 MND trans:2, continue to execute, stage:prepare
+02/20 10:31:57.816640 00001350 MND trans:2, stage from prepare to redoAction
+02/20 10:31:57.816648 00001350 MND trans:2, continue to execute, stage:redoAction
+02/20 10:31:57.816657 00001350 MND trans:2, stage from redoAction to commit
+02/20 10:31:57.816665 00001350 MND trans:2, continue to execute, stage:commit
+02/20 10:31:57.816689 00001350 MND trans:2, commit transaction
+02/20 10:31:57.816713 00001350 MND trans:2, sync to other mnodes, stage:commit
+02/20 10:31:57.816728 00001350 MND trans:2, will be proposed
+02/20 10:31:57.816893 00001350 MND trans:2, is proposing and wait sem, seq:4
+02/20 10:31:57.819771 00001378 MND trans:2, is proposed, saved:2 code:0x0, apply index:4 term:1 config:-1 role:leader raw:0x7f8aa000896b sec:1676860317 seq:4
+02/20 10:31:57.819830 00001378 MND trans:2, is proposed and post sem, seq:4
+02/20 10:31:57.819985 00001350 MND trans:2, sync finished
+02/20 10:31:57.820001 00001350 MND trans:2, commit finished
+02/20 10:31:57.820020 00001350 MND trans:2, stage from commit to commitAction
+02/20 10:31:57.820038 00001350 MND trans:2, continue to execute, stage:commitAction
+02/20 10:31:57.820138 00001350 MND trans:2, commitAction:0 write to sdb, type:user status:ready
+02/20 10:31:57.820144 00001350 MND trans:2, all 1 actions execute successfully
+02/20 10:31:57.820150 00001350 MND trans:2, stage from commitAction to finished
+02/20 10:31:57.820155 00001350 MND trans:2, continue to execute, stage:finished
+02/20 10:31:57.820271 00001350 MND trans:2, execute finished, code:0x0, failedTimes:0
+02/20 10:31:57.820278 00001350 MND trans:2, send rsp, stage:finished failedTimes:0 code:0x0
+02/20 10:31:57.820302 00001350 MND start to deploy sdb:dnode
+02/20 10:31:57.820315 00001350 MND trans:3, used to create dnode:HOME-LAPTOP-HUAWEI.:6030 on first deploy
+02/20 10:31:57.820328 00001350 MND trans:3, prepare transaction
+02/20 10:31:57.820340 00001350 MND trans:3, sync to other mnodes, stage:prepare
+02/20 10:31:57.820349 00001350 MND trans:3, will be proposed
+02/20 10:31:57.820473 00001350 MND trans:3, is proposing and wait sem, seq:5
+02/20 10:31:57.823310 00001378 MND trans:3, is proposed, saved:3 code:0x0, apply index:5 term:1 config:-1 role:leader raw:0x7f8aa0008d2b sec:1676860317 seq:5
+02/20 10:31:57.823390 00001378 MND trans:3, is proposed and post sem, seq:5
+02/20 10:31:57.823554 00001350 MND trans:3, sync finished
+02/20 10:31:57.823623 00001350 MND trans:3, prepare finished
+02/20 10:31:57.823758 00001350 MND trans:3, continue to execute, stage:prepare
+02/20 10:31:57.823796 00001350 MND trans:3, stage from prepare to redoAction
+02/20 10:31:57.823895 00001350 MND trans:3, continue to execute, stage:redoAction
+02/20 10:31:57.823969 00001350 MND trans:3, stage from redoAction to commit
+02/20 10:31:57.824040 00001350 MND trans:3, continue to execute, stage:commit
+02/20 10:31:57.824111 00001350 MND trans:3, commit transaction
+02/20 10:31:57.824232 00001350 MND trans:3, sync to other mnodes, stage:commit
+02/20 10:31:57.824249 00001350 MND trans:3, will be proposed
+02/20 10:31:57.824394 00001350 MND trans:3, is proposing and wait sem, seq:6
+02/20 10:31:57.827792 00001378 MND trans:3, is proposed, saved:3 code:0x0, apply index:6 term:1 config:-1 role:leader raw:0x7f8aa0006f7b sec:1676860317 seq:6
+02/20 10:31:57.827882 00001378 MND trans:3, is proposed and post sem, seq:6
+02/20 10:31:57.828017 00001350 MND trans:3, sync finished
+02/20 10:31:57.828033 00001350 MND trans:3, commit finished
+02/20 10:31:57.828043 00001350 MND trans:3, stage from commit to commitAction
+02/20 10:31:57.828053 00001350 MND trans:3, continue to execute, stage:commitAction
+02/20 10:31:57.828126 00001350 MND trans:3, commitAction:0 write to sdb, type:dnode status:ready
+02/20 10:31:57.828138 00001350 MND trans:3, all 1 actions execute successfully
+02/20 10:31:57.828156 00001350 MND trans:3, stage from commitAction to finished
+02/20 10:31:57.828169 00001350 MND trans:3, continue to execute, stage:finished
+02/20 10:31:57.828309 00001350 MND trans:3, execute finished, code:0x0, failedTimes:0
+02/20 10:31:57.828320 00001350 MND trans:3, send rsp, stage:finished failedTimes:0 code:0x0
+02/20 10:31:57.828393 00001350 MND start to deploy sdb:mnode
+02/20 10:31:57.828430 00001350 MND mnode:1, will be created when deploying, raw:0x561e6b2ca3c0
+02/20 10:31:57.828482 00001350 MND trans:4, used to create mnode:1
+02/20 10:31:57.828497 00001350 MND trans:4, prepare transaction
+02/20 10:31:57.828532 00001350 MND trans:4, sync to other mnodes, stage:prepare
+02/20 10:31:57.828562 00001350 MND trans:4, will be proposed
+02/20 10:31:57.828758 00001350 MND trans:4, is proposing and wait sem, seq:7
+02/20 10:31:57.831472 00001378 MND trans:4, is proposed, saved:4 code:0x0, apply index:7 term:1 config:-1 role:leader raw:0x7f8aa000735b sec:1676860317 seq:7
+02/20 10:31:57.831538 00001378 MND trans:4, is proposed and post sem, seq:7
+02/20 10:31:57.831675 00001350 MND trans:4, sync finished
+02/20 10:31:57.831852 00001350 MND trans:4, prepare finished
+02/20 10:31:57.831884 00001350 MND trans:4, continue to execute, stage:prepare
+02/20 10:31:57.831893 00001350 MND trans:4, stage from prepare to redoAction
+02/20 10:31:57.831900 00001350 MND trans:4, continue to execute, stage:redoAction
+02/20 10:31:57.831908 00001350 MND trans:4, stage from redoAction to commit
+02/20 10:31:57.831915 00001350 MND trans:4, continue to execute, stage:commit
+02/20 10:31:57.831923 00001350 MND trans:4, commit transaction
+02/20 10:31:57.831941 00001350 MND trans:4, sync to other mnodes, stage:commit
+02/20 10:31:57.831966 00001350 MND trans:4, will be proposed
+02/20 10:31:57.832096 00001350 MND trans:4, is proposing and wait sem, seq:8
+02/20 10:31:57.834927 00001378 MND trans:4, is proposed, saved:4 code:0x0, apply index:8 term:1 config:-1 role:leader raw:0x7f8aa000451b sec:1676860317 seq:8
+02/20 10:31:57.835041 00001378 MND trans:4, is proposed and post sem, seq:8
+02/20 10:31:57.835206 00001350 MND trans:4, sync finished
+02/20 10:31:57.835274 00001350 MND trans:4, commit finished
+02/20 10:31:57.835301 00001350 MND trans:4, stage from commit to commitAction
+02/20 10:31:57.835344 00001350 MND trans:4, continue to execute, stage:commitAction
+02/20 10:31:57.835390 00001350 MND vgId:1, has ready mnode:1, status:ready
+02/20 10:31:57.835399 00001350 MND vgId:1, ep:HOME-LAPTOP-HUAWEI.:6030 dnode:1
+02/20 10:31:57.835413 00001350 MND vgId:1, mnode sync not reconfig since readyMnodes:1 updatingMnodes:0
+02/20 10:31:57.835430 00001350 MND trans:4, commitAction:0 write to sdb, type:mnode status:ready
+02/20 10:31:57.835437 00001350 MND trans:4, all 1 actions execute successfully
+02/20 10:31:57.835447 00001350 MND trans:4, stage from commitAction to finished
+02/20 10:31:57.835453 00001350 MND trans:4, continue to execute, stage:finished
+02/20 10:31:57.835516 00001350 MND trans:4, execute finished, code:0x0, failedTimes:0
+02/20 10:31:57.835523 00001350 MND trans:4, send rsp, stage:finished failedTimes:0 code:0x0
+02/20 10:31:57.835553 00001350 MND start to deploy sdb:cluster
+02/20 10:31:57.835589 00001350 MND cluster:1763041749258277232, name is 206b20c7-da96-43e5-8358-b8afb5ddf669
+02/20 10:31:57.835605 00001350 MND cluster:1763041749258277232, will be created when deploying, raw:0x561e6b2ce560
+02/20 10:31:57.835619 00001350 MND trans:5, used to create cluster:1763041749258277232
+02/20 10:31:57.835626 00001350 MND trans:5, prepare transaction
+02/20 10:31:57.835642 00001350 MND trans:5, sync to other mnodes, stage:prepare
+02/20 10:31:57.835653 00001350 MND trans:5, will be proposed
+02/20 10:31:57.835784 00001350 MND trans:5, is proposing and wait sem, seq:9
+02/20 10:31:57.839063 00001378 MND trans:5, is proposed, saved:5 code:0x0, apply index:9 term:1 config:-1 role:leader raw:0x7f8aa000489b sec:1676860317 seq:9
+02/20 10:31:57.839124 00001378 MND trans:5, is proposed and post sem, seq:9
+02/20 10:31:57.839329 00001350 MND trans:5, sync finished
+02/20 10:31:57.839353 00001350 MND trans:5, prepare finished
+02/20 10:31:57.839500 00001350 MND trans:5, continue to execute, stage:prepare
+02/20 10:31:57.839524 00001350 MND trans:5, stage from prepare to redoAction
+02/20 10:31:57.839533 00001350 MND trans:5, continue to execute, stage:redoAction
+02/20 10:31:57.839676 00001350 MND trans:5, stage from redoAction to commit
+02/20 10:31:57.839692 00001350 MND trans:5, continue to execute, stage:commit
+02/20 10:31:57.839703 00001350 MND trans:5, commit transaction
+02/20 10:31:57.839731 00001350 MND trans:5, sync to other mnodes, stage:commit
+02/20 10:31:57.839749 00001350 MND trans:5, will be proposed
+02/20 10:31:57.839965 00001350 MND trans:5, is proposing and wait sem, seq:10
+02/20 10:31:57.845006 00001378 MND trans:5, is proposed, saved:5 code:0x0, apply index:10 term:1 config:-1 role:leader raw:0x7f8aa000551b sec:1676860317 seq:10
+02/20 10:31:57.845086 00001378 MND trans:5, is proposed and post sem, seq:10
+02/20 10:31:57.845217 00001350 MND trans:5, sync finished
+02/20 10:31:57.845230 00001350 MND trans:5, commit finished
+02/20 10:31:57.845242 00001350 MND trans:5, stage from commit to commitAction
+02/20 10:31:57.845254 00001350 MND trans:5, continue to execute, stage:commitAction
+02/20 10:31:57.845305 00001350 MND trans:5, commitAction:0 write to sdb, type:cluster status:ready
+02/20 10:31:57.845319 00001350 MND trans:5, all 1 actions execute successfully
+02/20 10:31:57.845330 00001350 MND trans:5, stage from commitAction to finished
+02/20 10:31:57.845341 00001350 MND trans:5, continue to execute, stage:finished
+02/20 10:31:57.845445 00001350 MND trans:5, execute finished, code:0x0, failedTimes:0
+02/20 10:31:57.845456 00001350 MND trans:5, send rsp, stage:finished failedTimes:0 code:0x0
+02/20 10:31:57.845502 00001350 MND sdb deploy success
+02/20 10:31:57.845536 00001350 MND start to write sdb file, apply index:10 term:1 config:-1, commit index:-1 term:-1 config:-1, file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode/data/sdb.data
+02/20 10:31:57.845812 00001350 MND write func to sdb file, total 0 rows
+02/20 10:31:57.845832 00001350 MND write db to sdb file, total 0 rows
+02/20 10:31:57.845842 00001350 MND write stb to sdb file, total 0 rows
+02/20 10:31:57.845852 00001350 MND write sma to sdb file, total 0 rows
+02/20 10:31:57.845865 00001350 MND write vgroup to sdb file, total 0 rows
+02/20 10:31:57.845875 00001350 MND write topic to sdb file, total 0 rows
+02/20 10:31:57.845884 00001350 MND write consumer to sdb file, total 0 rows
+02/20 10:31:57.845893 00001350 MND write subscribe to sdb file, total 0 rows
+02/20 10:31:57.845904 00001350 MND write stream to sdb file, total 0 rows
+02/20 10:31:57.845912 00001350 MND write acct to sdb file, total 1 rows
+02/20 10:31:57.845962 00001350 MND write user to sdb file, total 1 rows
+02/20 10:31:57.846019 00001350 MND write dnode to sdb file, total 1 rows
+02/20 10:31:57.846160 00001350 MND write snode to sdb file, total 0 rows
+02/20 10:31:57.846170 00001350 MND write qnode to sdb file, total 0 rows
+02/20 10:31:57.846179 00001350 MND write mnode to sdb file, total 1 rows
+02/20 10:31:57.846223 00001350 MND write cluster to sdb file, total 1 rows
+02/20 10:31:57.846263 00001350 MND write trans to sdb file, total 0 rows
+02/20 10:31:57.849158 00001350 MND write sdb file success, commit index:10 term:1 config:-1 file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/mnode/data/sdb.data
+02/20 10:31:57.849197 00001350 MND mnode set restored:1
+02/20 10:31:57.849212 00001350 MND start mnode management(3/4):start grant reset
+02/20 10:31:57.849224 00001350 MND start mnode management(4/4):start init timer
+02/20 10:31:57.849369 00001350 DND node:mnode, has been started
+02/20 10:31:57.849386 00001350 DND start to start node:vnode
+02/20 10:31:57.849393 00001350 DND start vnode(1/1):start vnode thread
+02/20 10:31:57.849404 00001350 DND restore 0 vnodes with 4 threads
+02/20 10:31:57.849485 00001350 DND node:vnode, has been started
+02/20 10:31:57.849521 00001350 DND TDengine initialized successfully
+02/20 10:31:58.788849 00001376 MND dnode:1, mnode syncState from offline to leader, restoreState from 0 to 1
+02/20 10:31:58.788876 00001376 MND dnode:1, HOME-LAPTOP-HUAWEI.:6030 first access, clusterId:1763041749258277232
+02/20 10:31:58.788887 00001376 MND dnode:1, from offline to online, memory avail:6976150324 total:7769919488 cores:8.00
+02/20 10:31:58.789634 00001386 DND status rsp received from mnode, statusSeq:1:1 dnodeVer:0:2, gtid:0x0:0x49c626ca9e400002
+02/20 10:31:58.789695 00001386 DND set local info, dnodeId:1 clusterId:1763041749258277232
+02/20 10:31:58.795216 00001386 DND succeed to write dnode file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/dnode/dnode.json, dnodeVer:2
+02/20 10:31:58.798804 00001386 DND succeed to write dnode file:/home/ubuntu/github/cadem/TDengine/TDengine/sim/dnode1/data/dnode/dnode.json, dnodeVer:2
