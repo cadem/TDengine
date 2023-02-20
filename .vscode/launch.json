@@ -21,7 +21,7 @@
           "find": "^tests/(.+?)/(.+?\\.py)$",
           "replace": "$2"
         }
-      },
+      }, 
       {
         "id": "testType",
         "type": "command",
