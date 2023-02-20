@@ -7,7 +7,7 @@
           "type": "python",
           "request": "launch",
           "program": "${workspaceFolder}/tests/${input:testType}/test.py",
-          "args" : ["-", "${input:fileName}"],
+          "args" : ["-f", "${input:fileName}"],
           "console": "integratedTerminal"
       }
   ],
