@@ -1,1 +1,36 @@
-
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "cwd": "${workspaceFolder}/tests/${input:testType}",
+          "name": "Python: current file",
+          "type": "python",
+          "request": "launch",
+          "program": "${workspaceFolder}/tests/${input:testType}/testFramework.py",
+          "args" : ["-testFile", "${input:fileName}"],
+          "console": "integratedTerminal"
+      }
+  ],
+  "inputs": [      
+      {
+        "id": "fileName",
+        "type": "command",
+        "command": "extension.commandvariable.transform",
+        "args": {
+          "text": "${relativeFile}", 
+          "find": "^tests/(.+?)/(.+?\\.py)$",
+          "replace": "$2"
+        }
+      },
+      {
+        "id": "testType",
+        "type": "command",
+        "command": "extension.commandvariable.transform",
+        "args": {
+          "text": "${relativeFile}",
+          "find": "^tests/(.+?)/(.+?\\.py)$",
+          "replace": "$1"
+        }
+      }
+  ]
+}
