@@ -33,7 +33,22 @@
           "program": "${workspaceFolder}/tests/${input:testType}/test.py",
           "args" : ["-f", "${input:fileName}"],
           "console": "integratedTerminal"
-      }
+      },
+      {
+        "name": "(gdb) Attach",
+        "type": "cppdbg",
+        "request": "attach",
+        "program": "/usr/bin/taosd",
+        "processId": "1333971",
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ]
+    }
   ],
   "inputs": [      
       {
